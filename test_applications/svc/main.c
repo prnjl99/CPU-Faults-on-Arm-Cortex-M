@@ -22,6 +22,7 @@ int main(void)
     GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, GPIO_PIN_2);
     GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, GPIO_PIN_3);
 
+    /* Pass arguments using SVC */
     x= 1 ;
     y= 5 ;
     z= compute_Add(x,y);
