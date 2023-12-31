@@ -65,6 +65,33 @@ typedef struct
   __IO uint32_t CSR;
 } RCC_TypeDef;
 
+typedef struct __attribute__((packed))
+{
+  uint32_t r0;
+  uint32_t r1;
+  uint32_t r2;
+  uint32_t r3;
+  uint32_t r12;
+  uint32_t lr;
+  uint32_t pc;
+  uint32_t xpsr;
+} stack_frame_t;
+
+typedef enum
+{
+    BUS_FAULT_PRECISE = 0,
+    BUS_FAULT_IMPRECISE,
+    BUS_FAULT_IBUSERR,
+    MEM_MANAGE_IACCVIOL,
+    USAGE_FAULT_INVSTATE,
+        USAGE_FAULT_UNDEFSTR,
+    USAGE_FAULT_INVPC,
+    USAGE_FAULT_DIV_BY_ZERO,
+    USAGE_FAULT_UNALIGNED_MEM_ACCESS,
+    USAGE_FAULT_NOCP,
+    BUS_FAULT_STKERR,
+} fault_type_t ;
+
 void _close(void);
 void _lseek(void); 
 void _read(void);
